@@ -1,0 +1,135 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1b1f2a;
+  --muted: #5b657a;
+  --accent: #4c6fff;
+  --danger: #d73a49;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111521;
+    --card: #1a2030;
+    --text: #edf2ff;
+    --muted: #a7b1ca;
+    --accent: #7d95ff;
+    --danger: #ff6b7c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #dce3f7 120%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.hero p {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.container {
+  width: min(960px, 92vw);
+  margin: 0 auto 3rem;
+}
+
+.place-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.place-selector select {
+  padding: 0.75rem;
+  border-radius: 0.7rem;
+  border: 1px solid #c6cee7;
+  font-size: 1rem;
+  background: var(--card);
+  color: var(--text);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.signal-card {
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.signal-card h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.signal-emoji {
+  font-size: 1.2rem;
+  margin: 0.7rem 0 1rem;
+}
+
+.signal-buttons {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tap-btn {
+  border: 1px solid #bec9f0;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  background: transparent;
+  color: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.tap-btn:hover,
+.tap-btn.active {
+  border-color: var(--accent);
+  background: color-mix(in oklab, var(--accent), transparent 88%);
+}
+
+.meta {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#last-updated {
+  color: var(--muted);
+  margin: 0;
+}
+
+.danger {
+  border: 1px solid color-mix(in oklab, var(--danger), white 60%);
+  background: color-mix(in oklab, var(--danger), transparent 90%);
+  color: var(--danger);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+}
