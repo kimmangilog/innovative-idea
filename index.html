@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Now or Nah</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Now or Nah?</h1>
+      <p>
+        Real-time, one-tap signals to decide if you should head out.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="place-selector">
+        <label for="place">Choose a place</label>
+        <select id="place"></select>
+      </section>
+
+      <section class="status-grid">
+        <article class="signal-card" data-signal="openStatus">
+          <h2>Open Status</h2>
+          <p class="signal-emoji" id="openStatus-display">🟢 Open</p>
+          <div class="signal-buttons" id="openStatus-buttons"></div>
+        </article>
+
+        <article class="signal-card" data-signal="noiseLevel">
+          <h2>Noise Level</h2>
+          <p class="signal-emoji" id="noiseLevel-display">😐 Moderate</p>
+          <div class="signal-buttons" id="noiseLevel-buttons"></div>
+        </article>
+
+        <article class="signal-card" data-signal="crowdLevel">
+          <h2>Crowd Level</h2>
+          <p class="signal-emoji" id="crowdLevel-display">🟡 Moderate</p>
+          <div class="signal-buttons" id="crowdLevel-buttons"></div>
+        </article>
+      </section>
+
+      <section class="meta">
+        <p id="last-updated">No updates yet.</p>
+        <button id="reset" class="danger">Reset current place data</button>
+      </section>
+    </main>
+
+    <template id="button-template">
+      <button type="button" class="tap-btn"></button>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
