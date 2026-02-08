@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go, Eat, or Skip</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Go, Eat, or Skip</h1>
+        <p class="subtitle">A real-time student food decision app: “Is it worth going there to eat right now?”</p>
+      </header>
+
+      <section class="panel controls" aria-label="Student constraints and preferences">
+        <h2>Your Constraints</h2>
+        <div class="grid">
+          <label>
+            Goal mode
+            <select id="goalMode">
+              <option value="weight_loss">Weight loss</option>
+              <option value="muscle_gain">Muscle gain</option>
+              <option value="budget_survival">Budget survival</option>
+              <option value="starving">I don’t care, I’m starving</option>
+            </select>
+          </label>
+
+          <label>
+            Budget cap ($)
+            <input id="budgetCap" type="number" min="1" max="30" value="8" />
+          </label>
+
+          <label>
+            Max walking time (mins)
+            <input id="maxWalk" type="number" min="1" max="30" value="10" />
+          </label>
+
+          <label>
+            Time available between classes (mins)
+            <input id="timeAvailable" type="number" min="10" max="120" value="35" />
+          </label>
+
+          <label>
+            Preference
+            <select id="preference">
+              <option value="none">No specific preference</option>
+              <option value="halal">Halal</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="spicy">Spicy</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel" aria-live="polite">
+        <h2>Nearby Places</h2>
+        <div id="places" class="places"></div>
+      </section>
+    </main>
+
+    <template id="placeTemplate">
+      <article class="place-card">
+        <div class="row top-row">
+          <h3 class="name"></h3>
+          <span class="decision badge"></span>
+        </div>
+        <p class="explanation"></p>
+
+        <div class="metrics"></div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
